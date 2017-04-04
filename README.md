@@ -13,4 +13,4 @@ To build this scanner image, just issue a standard Docker build command:
 
 Run the following command from the command line to start the scanner.
 
-    docker run -ti -v $(pwd):/root/src --link sonarqube burakince/sonarscanner
+    docker run -ti -v $(pwd):/root/src --link sonarqube --net dockersonarqube_default burakince/sonarscanner

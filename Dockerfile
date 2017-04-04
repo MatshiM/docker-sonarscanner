@@ -15,7 +15,6 @@ RUN set -x \
 ENV PATH /opt/sonar-scanner/bin/:$PATH
 
 COPY sonar-scanner.properties $SONAR_SCANNER_HOME/conf/sonar-scanner.properties
-
-WORKDIR $SONAR_SCANNER_HOME
 COPY run.sh $SONAR_SCANNER_HOME/bin/
-ENTRYPOINT ["./bin/run.sh"]
+
+ENTRYPOINT ["/opt/sonar-scanner/bin/run.sh"]
